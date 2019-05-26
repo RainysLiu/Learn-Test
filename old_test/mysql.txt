@@ -1,0 +1,62 @@
+1.数学函数
+1）abs（）绝对值
+2）mod（n,m）取余
+3）floor（）下行取整
+4) ceiling()上行取整
+5）round（）四舍五入
+2.字符串函数
+
+1）ASCII(str)  返回ascii字符的数值
+2）concat（）字符串连接
+3）length（）返回str长度
+4）locate（substr,str) 查找substr在str中第一次出现之位置，如未查到返回0
+5）instr(str,substr)   查询substr在......
+6）Left（str，len）从左截取len个
+     Right（str，len）从右截取len个
+    substring（str，pos）从pos位置开始截取
+     trim（str），rtrim（str）去除str左边或右边的空白
+     replace（str,from_str,to_str）将str中from_str替换为to_str
+     repeat(str,count)重复str的count次数
+     insert(str,pos,len,newstr) 从pos位置开始插入len长的
+7）newstr
+
+3.日期和时间函数
+dayofweek(date)返回日期的星期索引（1=星期日,2=星期二，，，）
+current_date 当前日期，date类型
+now（）返回当前日期和时间
+current_timestamp 返回当前日期和时间
+weekday(date) 返回日期的星期索引 但（0=星期一，1=星期二，，，）
+
+dayofmonth(date) 返回月中的日的索引  0~31
+dayofyear() 返回年中的日的索引  0~366
+month(date)返回日期的月份
+dayname(date)返回星期的名称
+monthday（date）返回月份的名称
+quarter(date) 返回date的季度
+week（date，first）表示星期从first开始，返回一年中的第几周(0~52),
+year(date)
+hour(time)
+minute(time)
+seconds(time)
+
+date_add(date,INTERVAL expr type)  增加间隔时间
+ date_sub(date,INTERVAL expr type)   减少间隔时间
+
+type:
+DAY 天；
+HOUR 小时；
+minute 分钟；
+second 秒；
+MINUTE_SECOND  分钟:秒
+HOUR_MINUTE 小时:分钟
+DAY_SECOND  天 小时:分钟：秒
+MONTH 月
+YEAR 年
+
+4.控制流程函数
+
+
+
+
+
+
