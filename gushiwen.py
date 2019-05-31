@@ -216,7 +216,7 @@ class GuShiWen(object):
         for x in gushilist:
             tittle = x.get_text()
             try:
-                tittle = re.findall('(.*?)\(.*?\)', tittle)[0]
+                tittle = re.findall('(.*?)\(.*?\)', tittle)[0].replace('/', '')
             except:
                 pass
             detailurl = 'https://so.gushiwen.org' + x.find('a')['href']
@@ -228,6 +228,8 @@ class GuShiWen(object):
                 f = open(os.path.join('./' + dir_name, tittle + '.txt'), 'wb')
             else:
                 f = open(os.path.join('./' + dir_name, catename, tittle + '.txt'), 'wb')
+            allcontent = allcontent.replace('。', '。\n')
+            print(allcontent)
             f.write(allcontent.encode('utf8'))
             if catename:
                 print('《%s》之《%s》第%d篇《%s》下载成功!!!' % (dir_name, catename, s, tittle))
