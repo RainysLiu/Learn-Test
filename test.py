@@ -1,6 +1,6 @@
 import configparser
 import os
-
+import time
 
 cur_path = os.path.dirname(__file__)
 file_list=os.listdir(cur_path)
@@ -26,3 +26,5 @@ def getConfig(set_section=None, set_option=None):
 
 if __name__ == '__main__':
     getConfig('s1', 's')
+    time.sleep(5)
+    print('第一个执行完成!')
