@@ -1,15 +1,15 @@
-
 import os
 
-def getALlDir(path,sp = '  '):
+
+def getALlDir(path, spc=''):
     filesList = os.listdir(path)
-    sp += '  '
     for fileName in filesList:
         filesAbsPath = os.path.join(path, fileName)
         if os.path.isdir(filesAbsPath):
-            print(sp + '目录：',fileName)
-            getALlDir(filesAbsPath,sp)
+            print(spc + '目录：', fileName)
+            getALlDir(filesAbsPath)
         else:
-            print(sp + '文件：',fileName)
+            print(spc + ' -文件：', fileName, spc + ' ')
 
-getALlDir(r'E:/工作区')
+
+getALlDir('E:\工作区\模板项目\DjangoBlog')

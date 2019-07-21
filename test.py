@@ -2,9 +2,9 @@ import configparser
 import os
 import time
 
+
 cur_path = os.path.dirname(__file__)
 file_list=os.listdir(cur_path)
-
 
 def getConfig(set_section=None, set_option=None):
     for file_name in file_list:
@@ -13,7 +13,7 @@ def getConfig(set_section=None, set_option=None):
             path = os.path.join(cur_path, file_name)
             # print(path)
             config = configparser.ConfigParser()
-            config.read(path,encoding="utf-8")
+            config.read(path, encoding="utf-8")
             sections = config.sections()
             for section in sections:
                 if section == set_section:
