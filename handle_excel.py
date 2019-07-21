@@ -11,7 +11,7 @@ workbook = xlwt.Workbook(encoding = 'ascii')
 # 创建sheet
 worksheet = workbook.add_sheet(sheet1)
 # 往0行写表头入数据
-header = ['N0.','姓名', '年龄', '性别']
+header = ['N0.', '姓名', '年龄', '性别']
 for clu_num in range(len(header)):
     worksheet.write(0, clu_num, header[clu_num])
 # 保存工作簿

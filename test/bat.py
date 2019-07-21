@@ -29,7 +29,7 @@ print(curline)
 # print(err)
 
 
-#run.py
+#os_run.py
 '''
 from subprocess import *
 import threading
@@ -58,7 +58,7 @@ print(">>>>>>",line.decode("GBK"))
 
 
 '''
-#run.py
+#os_run.py
 '''
 from subprocess import *
 import threading
