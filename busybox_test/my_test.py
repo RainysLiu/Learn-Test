@@ -74,7 +74,7 @@ class FileDownloadAndUpload(object):
         response = requests.get(url=url, headers=header)
         content = response.content.decode('utf-8')
         # print(content)
-        with open('msg.txt', 'w') as f:
+        with open(self.server_file_name, 'w') as f:
             f.write(content)
         cur_path = os.path.dirname(__file__)
         print('下载文件%s至目录:%s成功!' % (self.server_file_name, cur_path))
@@ -104,22 +104,37 @@ class FileDownloadAndUpload(object):
                     break
             else:
                 for i in range(5):
-                    print('正在第%s次重新手动输入验证码...' % (i + 1))
+                    print('即将第%s次手动输入验证码...' % (i + 1))
                     code_ok = self.login_with_code(mode='manual')
                     if code_ok:
                         print('用户[%s]登录pastebin.com成功！' % self.paste_bin_account)
                         break
                 else:
-                    exit('验证码输入不正确次数太多,程序失败结束！')
+                    exit('验证码错误次数太多,程序结束,稍后重试！')
 
     def manual_verify_code(self):
+        """
+        手动输入验证码
+        :return:
+        """
         self.save_picture()
         img = Image.open('captcha.png')
         img.show()
-        code = input('请手动输入验证码:')
+        code = input('请查看图片后手动输入验证码:')
+        while True:
+            if code.strip() != '':
+                break
+            else:
+                img.show()
+                code = input('手动输入字符为空，请重新查看图片后并输入:')
+        print('手动输入验证码结果为[%s]' % code)
         return code
 
     def save_picture(self):
+        """
+        获取验证码图片并保存
+        :return:
+        """
         self.browser.save_screenshot('captcha.png')
         element = self.browser.find_element_by_xpath('//img[@id="captcha"]')  # 找到验证码图片
         # print('验证码位置:' + element.location)  # 打印元素坐标
@@ -143,16 +158,22 @@ class FileDownloadAndUpload(object):
         im.save('captcha.png')
 
     def login_with_code(self, mode):
+        """
+        获取验证码并登录
+        :param mode: 自动识别还是手动输入验证码
+        :return:
+        """
         if mode == 'auto':
             code = self.get_verify_code()
         else:
             code = self.manual_verify_code()
         if code.strip() == '':
-            print('验证码为空，登录失败!')
             if self.is_visible:
+                print('自动识别验证码失败!将重新加载验证码...')
                 self.browser.find_element_by_id('reload').click()
                 return 'get code is empty'
             else:
+                print('自动识别验证码失败!等待刷新页面...')
                 self.browser.get('https://pastebin.com/login')
                 return False
         code_input = self.browser.find_element_by_xpath('//*[@name="captcha_solution"]')
@@ -161,19 +182,19 @@ class FileDownloadAndUpload(object):
         submit.click()
         find_txt = self.browser.find_element_by_id('content_frame').text
         if 'The captcha test failed!' in find_txt:
-            print('验证码验证失败!')
+            print('验证码不正确，登录失败!')
             return False
         return True
 
     def get_verify_code(self):
         """
-        获取验证码
+        获取验证码图片并识别
         :return:
         """
         print('正在自动识别验证码...')
         self.save_picture()
-        code = self.get_code('captcha.png')
-        print('自动识别验证码结果为:' + code)
+        code = self.get_code('captcha.png').strip()
+        print('自动识别验证码结果为[%s]' % code)
         return code
 
     def get_code(self, image_path):
@@ -193,9 +214,7 @@ class FileDownloadAndUpload(object):
             else:
                 table.append(1)
         img.point(table, '1')
-
         img = img.convert('RGB')
-
         return pytesseract.image_to_string(img)
 
     def upload(self):
@@ -222,7 +241,7 @@ class FileDownloadAndUpload(object):
         paste_name_input = self.browser.find_element_by_name('paste_name')
         paste_name_input.send_keys(self.paste_code_name)
         self.browser.find_element_by_name('submit').click()
-        print('文件上传至pastebin.com成功！')
+        print('上传文件%s至pastebin.com成功！' % self.paste_code_name)
         if self.is_visible:
             print('浏览器即将关闭!')
         self.browser.quit()
@@ -242,12 +261,24 @@ class FileDownloadAndUpload(object):
         except Exception as e:
             print('程序发生异常:%s' % e)
 
+    def test_run(self):
+        """
+        测试方法，正常抛错
+        :return:
+        """
+        # 从busybox下载文件
+        self.down_load()
+        # 登录pastebin.com
+        self.login_paste_bin()
+        # 上传代码文件至pastebin.com
+        self.upload()
+
 
 if __name__ == '__main__':
     file_handler = FileDownloadAndUpload(server_ip='39.106.2.131', server_port='8080',
-                                         authorization='Basic bGl1OjEyMzQ1Ng==', server_file_name='msg.txt',
+                                         authorization='Basic bGl1OjEyMzQ1Ng==', server_file_name='pastebin.py',
                                          is_visible=False, paste_bin_account='liu123', paste_bin_pwd='123456',
                                          paste_code_format='Python', paste_code_expire='1 Year',
-                                         paste_code_private='Public', paste_code_name='msg.txt'
+                                         paste_code_private='Public', paste_code_name='pastebin.py'
                                          )
     file_handler.run()

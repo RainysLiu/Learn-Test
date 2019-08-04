@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15d39ca9-3c30-45d0-8240-ca779b87c556" name="Default" comment="aa">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Rainy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cfg_read.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handle_excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/handle_excel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/bat.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/bat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/busybox_test/my_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/busybox_test/my_test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,11 +30,32 @@
     <SUITE FILE_PATH="coverage/Learn_Test$os.coverage" NAME="os模块 Coverage Results" MODIFIED="1561879660190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/old_test" />
     <SUITE FILE_PATH="coverage/test$excel_add_phone_region.coverage" NAME="excel_add_phone_region Coverage Results" MODIFIED="1558247772114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test.py">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/busybox_test/my_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="280" column="14" selection-end-line="284" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -57,7 +70,13 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>相关古诗文专题！</find>
+      <find>browser</find>
+      <find>正在自动处理验证码</find>
+      <find>识别验证码失败</find>
     </findStrings>
+    <replaceStrings>
+      <replace>self.browser</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -83,13 +102,17 @@
         <option value="$PROJECT_DIR$/gushiwen.py" />
         <option value="$PROJECT_DIR$/handle_excel.py" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/selenium_test/alert_test.py" />
+        <option value="$PROJECT_DIR$/selenium_test/request_test.py" />
+        <option value="$PROJECT_DIR$/busybox_test/request_test.py" />
+        <option value="$PROJECT_DIR$/busybox_test/my_test.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="520" />
-    <option name="width" value="1399" />
-    <option name="height" value="1033" />
+    <option name="x" value="-8" />
+    <option name="width" value="976" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -105,6 +128,11 @@
               <item name="Learn-Test" type="b2602c69:ProjectViewProjectNode" />
               <item name="Learn-Test" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Learn-Test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Learn-Test" type="462c0819:PsiDirectoryNode" />
+              <item name="busybox_test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -115,7 +143,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/工作区/模板项目/lianxi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/selenium_test" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.stylelint" value="project" />
@@ -127,13 +155,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\pro\Learn-Test" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\pro\Learn-Test\selenium_test" />
       <recent name="E:\pro\Learn-Test" />
       <recent name="E:\pro\test" />
       <recent name="C:\Users\Rainy\Desktop\pro\test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\pro\Learn-Test\selenium_test" />
+      <recent name="E:\pro\Learn-Test" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -148,8 +178,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.py_tut_with_images">
-    <configuration name="装饰器" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.my_test">
+    <configuration name="alert_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Learn-Test" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -157,12 +187,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/old_test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/selenium_test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/old_test/装饰器.py" />
+      <option name="SCRIPT_NAME" value="E:\pro\Learn-Test\selenium_test\selenium_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -171,7 +201,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="handle_excel" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="my_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Learn-Test" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -179,12 +209,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/busybox_test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/handle_excel.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/busybox_test/my_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -193,7 +223,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="os模块" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="request_test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Learn-Test" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -201,12 +231,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/old_test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/busybox_test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/old_test/os模块.py" />
+      <option name="SCRIPT_NAME" value="E:\pro\Learn-Test\busybox_test\my_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -215,7 +245,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="py_tut_with_images" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="request_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Learn-Test" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -223,12 +253,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pygame-primer-master" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/selenium_test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pygame-primer-master/py_tut_with_images.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/selenium_test/request_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -237,42 +267,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="py_tutfinal" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Twisted Trial for busybox_test.selenium_test.Test_prompt.test_HandleAlert" type="tests" factoryName="Twisted Trial" temporary="true" nameIsGenerated="true">
       <module name="Learn-Test" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pygame-primer-master" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/busybox_test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pygame-primer-master/py_tutfinal.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;busybox_test.selenium_test.Test_prompt.test_HandleAlert&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.os模块" />
-      <item itemvalue="Python.装饰器" />
-      <item itemvalue="Python.handle_excel" />
-      <item itemvalue="Python.py_tutfinal" />
-      <item itemvalue="Python.py_tut_with_images" />
+      <item itemvalue="Python.alert_test" />
+      <item itemvalue="Python.request_test" />
+      <item itemvalue="Python tests.Twisted Trial for busybox_test.selenium_test.Test_prompt.test_HandleAlert" />
+      <item itemvalue="Python.request_test (1)" />
+      <item itemvalue="Python.my_test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.py_tut_with_images" />
-        <item itemvalue="Python.py_tutfinal" />
-        <item itemvalue="Python.handle_excel" />
-        <item itemvalue="Python.装饰器" />
-        <item itemvalue="Python.os模块" />
+        <item itemvalue="Python.my_test" />
+        <item itemvalue="Python.request_test (1)" />
+        <item itemvalue="Python.request_test" />
+        <item itemvalue="Python.alert_test" />
+        <item itemvalue="Python tests.Twisted Trial for busybox_test.selenium_test.Test_prompt.test_HandleAlert" />
       </list>
     </recent_temporary>
   </component>
@@ -288,7 +311,10 @@
       <updated>1557315233081</updated>
       <workItem from="1563694232032" duration="130000" />
       <workItem from="1563694409555" duration="3295000" />
-      <workItem from="1563703773971" duration="1676000" />
+      <workItem from="1563703773971" duration="2962000" />
+      <workItem from="1564749645130" duration="1867000" />
+      <workItem from="1564760249217" duration="4820000" />
+      <workItem from="1564894070473" duration="43480000" />
     </task>
     <task id="LOCAL-00001" summary="aa">
       <created>1558857380568</created>
@@ -318,11 +344,44 @@
       <option name="project" value="LOCAL" />
       <updated>1563679840400</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="aa">
+      <created>1563705456340</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1563705456340</updated>
+    </task>
+    <task id="LOCAL-00006" summary="aa">
+      <created>1564911064417</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1564911064417</updated>
+    </task>
+    <task id="LOCAL-00007" summary="aa">
+      <created>1564911221593</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1564911221593</updated>
+    </task>
+    <task id="LOCAL-00008" summary="aa">
+      <created>1564934870065</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1564934870066</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="Twisted_Trial_for_alert_test_Test_prompt_test_HandleAlert - 2019.08.03 at 20h 05m 50s.xml">
+      <configuration name="Twisted Trial for alert_test.Test_prompt.test_HandleAlert" configurationId="tests" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5101000" />
+    <option name="totallyTimeSpent" value="56554000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -335,28 +394,29 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1563" height="855" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17408638" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19468439" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32904148" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49833888" weight="0.34191704" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3988604" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49833888" visible="true" weight="0.34763947" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.397711" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.2918455" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5016611" side_tool="true" weight="0.34191704" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32920355" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5016611" side_tool="true" weight="0.28183118" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32904148" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32876712" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2883721" />
@@ -385,6 +445,32 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="aa" />
     <option name="LAST_COMMIT_MESSAGE" value="aa" />
@@ -392,28 +478,17 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Learn_Test$py_tut_with_images.coverage" NAME="py_tut_with_images Coverage Results" MODIFIED="1563705149904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pygame-primer-master" />
     <SUITE FILE_PATH="coverage/Learn_Test$py_tutfinal.coverage" NAME="py_tutfinal Coverage Results" MODIFIED="1563704437632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pygame-primer-master" />
+    <SUITE FILE_PATH="coverage/Learn_Test$request_test__1_.coverage" NAME="request_test (1) Coverage Results" MODIFIED="1564910529036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/busybox_test" />
     <SUITE FILE_PATH="coverage/Learn_Test$os.coverage" NAME="os模块 Coverage Results" MODIFIED="1563695200805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/old_test" />
+    <SUITE FILE_PATH="coverage/Learn_Test$Twisted_Trial_for_alert_test_Test_prompt_test_HandleAlert.coverage" NAME="Twisted Trial for alert_test.Test_prompt.test_HandleAlert Coverage Results" MODIFIED="1564833940779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/selenium_test" />
     <SUITE FILE_PATH="coverage/Learn_Test$.coverage" NAME="装饰器 Coverage Results" MODIFIED="1563703072661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/old_test" />
-    <SUITE FILE_PATH="coverage/Learn_Test$test.coverage" NAME="test Coverage Results" MODIFIED="1563694885295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Learn_Test$test.coverage" NAME="test Coverage Results" MODIFIED="1564832023068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Learn_Test$handle_excel.coverage" NAME="handle_excel Coverage Results" MODIFIED="1563703426427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Learn_Test$request_test.coverage" NAME="request_test Coverage Results" MODIFIED="1564894172837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/selenium_test" />
+    <SUITE FILE_PATH="coverage/Learn_Test$alert_test.coverage" NAME="alert_test Coverage Results" MODIFIED="1564834733061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/selenium_test" />
+    <SUITE FILE_PATH="coverage/Learn_Test$my_test.coverage" NAME="my_test Coverage Results" MODIFIED="1564940881030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/busybox_test" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/爱情/一丛花令·伤高怀远几.txt" />
-    <entry file="file://$PROJECT_DIR$/爱情/七夕.txt" />
-    <entry file="file://$PROJECT_DIR$/爱情/七夕歌.txt" />
-    <entry file="file://$PROJECT_DIR$/爱情/南歌子·懒拂鸳鸯枕.txt" />
-    <entry file="file://$PROJECT_DIR$/爱情/南歌子·倭堕低梳髻.txt" />
-    <entry file="file://$PROJECT_DIR$/爱情/忆秦娥·花深深.txt" />
-    <entry file="file://$PROJECT_DIR$/爱情/春日行.txt" />
-    <entry file="file://$PROJECT_DIR$/爱情/木兰花·清琴再鼓求凰.txt" />
-    <entry file="file://$PROJECT_DIR$/爱情/清平乐·风鬟雨鬓.txt" />
-    <entry file="file://$PROJECT_DIR$/爱情/清平乐·春宵睡重.txt" />
-    <entry file="file://$PROJECT_DIR$/爱情/瑞鹤仙·晴丝牵绪乱.txt" />
-    <entry file="file://$PROJECT_DIR$/爱情/神女赋.txt" />
-    <entry file="file://$PROJECT_DIR$/爱情/绿水词.txt" />
-    <entry file="file://$PROJECT_DIR$/爱情/高唐赋.txt" />
-    <entry file="file://$PROJECT_DIR$/爱情/鹊桥仙·纤云弄巧.txt" />
-    <entry file="file://$PROJECT_DIR$/爱情/鹧鸪天·彩袖殷勤捧玉.txt" />
     <entry file="file://$PROJECT_DIR$/爱情/鼓笛慢·乱花丛里曾携.txt" />
     <entry file="file://$PROJECT_DIR$/爱情/题柳.txt" />
     <entry file="file://$PROJECT_DIR$/logging.log" />
@@ -471,16 +546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/old_test/数据部分考试.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="153">
-            <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/old_test/生成器.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -514,23 +579,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lianxiLog.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handle_excel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/format_gushi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -538,13 +586,6 @@
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chinasoft.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
         </state>
       </provider>
     </entry>
@@ -605,8 +646,141 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/handle_excel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chinasoft.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lianxiLog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Programs/Python/Python36/Lib/site-packages/requests/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561" />
+      </provider>
+    </entry>
+    <entry file="file://D:/Programs/Python/Python36/Lib/site-packages/requests/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="59" column="26" lean-forward="true" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Programs/Python/Python36/Lib/site-packages/requests/sessions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="465" column="8" selection-start-line="465" selection-start-column="8" selection-end-line="465" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/old_test/数据部分考试.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="153">
+            <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/selenium_test/_trial_temp/test.log">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/Programs/Python/Python36/Lib/site-packages/selenium/webdriver/support/event_firing_webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="99" column="8" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Programs/Python/Python36/Lib/site-packages/selenium/webdriver/chrome/webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/busybox_test/selenium_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/busybox_test/bdbutton.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/busybox_test/chrome_driver.exe">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/busybox_test/capture.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://D:/Programs/Python/Python36/Lib/site-packages/PIL/ImageFilter.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/Programs/Python/Python36/Lib/site-packages/PIL/Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="822" column="8" selection-start-line="822" selection-start-column="8" selection-end-line="822" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/busybox_test/msg.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Programs/Python/Python36/Lib/typing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="2278" column="8" selection-start-line="2278" selection-start-column="8" selection-end-line="2278" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/busybox_test/pastebin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/busybox_test/captcha.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/busybox_test/my_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="280" column="14" selection-end-line="284" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
