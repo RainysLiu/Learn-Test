@@ -1,9 +1,11 @@
+import pytesseract
 import requests
 import os
 from selenium import webdriver
 import time
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.select import Select
+from PIL import Image, ImageEnhance
 
 
 class FileDownloadAndUpload(object):
@@ -78,21 +80,123 @@ class FileDownloadAndUpload(object):
         print('下载文件%s至目录:%s成功!' % (self.server_file_name, cur_path))
 
     def login_paste_bin(self):
-        
+        """
+        登录pastebin
+        :return:
+        """
         print('正在登录pastebin.com...')
         self.browser.get('https://pastebin.com/login')
         # time.sleep(10)
-        account_input = self.browser.find_element_by_xpath('//*[@name="user_name"]')
-        # print(account_input)
-        time.sleep(1)
-        account_input.send_keys(self.paste_bin_account)
-        pwd_input = self.browser.find_element_by_xpath('//*[@name="user_password"]')
-        # print(pwd_input)
-        time.sleep(1)
-        pwd_input.send_keys(self.paste_bin_pwd)
+        # 获取验证码并登录
+        verify_ok = self.login_with_code(mode='auto')
+        if not verify_ok:
+            for i in range(5):
+                print('即将第%s次重新自动识别验证码...' % (i + 1))
+                # 非重新加载验证码的情况下，才需要输入账户密码
+                if verify_ok != 'reload code':
+                    account_input = self.browser.find_element_by_xpath('//*[@name="user_name"]')
+                    account_input.send_keys(self.paste_bin_account)
+                    pwd_input = self.browser.find_element_by_xpath('//*[@name="user_password"]')
+                    pwd_input.send_keys(self.paste_bin_pwd)
+                verify_ok = self.login_with_code(mode='auto')
+                if verify_ok:
+                    print('用户[%s]登录pastebin.com成功！' % self.paste_bin_account)
+                    break
+            else:
+                for i in range(5):
+                    print('正在第%s次重新手动输入验证码...' % (i + 1))
+                    code_ok = self.login_with_code(mode='manual')
+                    if code_ok:
+                        print('用户[%s]登录pastebin.com成功！' % self.paste_bin_account)
+                        break
+                else:
+                    exit('验证码输入不正确次数太多,程序失败结束！')
+
+    def manual_verify_code(self):
+        self.save_picture()
+        img = Image.open('captcha.png')
+        img.show()
+        code = input('请手动输入验证码:')
+        return code
+
+    def save_picture(self):
+        self.browser.save_screenshot('captcha.png')
+        element = self.browser.find_element_by_xpath('//img[@id="captcha"]')  # 找到验证码图片
+        # print('验证码位置:' + element.location)  # 打印元素坐标
+        # print('验证码大小:' + element.size)  # 打印元素大小
+        if self.is_visible:
+            left = element.location['x'] + 65
+            top = element.location['y'] + 105
+            right = left + element.size['width'] + 30
+            bottom = top + element.size['height'] + 15
+        else:
+            left = element.location['x']
+            top = element.location['y']
+            right = left + element.size['width']
+            bottom = top + element.size['height']
+        im = Image.open('captcha.png')
+        im = im.crop((left, top, right, bottom))
+        im.save('captcha.png')
+        im = Image.open('captcha.png')
+        im = ImageEnhance.Color(im).enhance(3)
+        im = ImageEnhance.Contrast(im).enhance(3)
+        im.save('captcha.png')
+
+    def login_with_code(self, mode):
+        if mode == 'auto':
+            code = self.get_verify_code()
+        else:
+            code = self.manual_verify_code()
+        if code.strip() == '':
+            print('验证码为空，登录失败!')
+            if self.is_visible:
+                self.browser.find_element_by_id('reload').click()
+                return 'get code is empty'
+            else:
+                self.browser.get('https://pastebin.com/login')
+                return False
+        code_input = self.browser.find_element_by_xpath('//*[@name="captcha_solution"]')
+        code_input.send_keys(code)
         submit = self.browser.find_element_by_xpath('//*[@name="submit"]')
         submit.click()
-        print('用户[%s]登录pastebin.com成功！' % self.paste_bin_account)
+        find_txt = self.browser.find_element_by_id('content_frame').text
+        if 'The captcha test failed!' in find_txt:
+            print('验证码验证失败!')
+            return False
+        return True
+
+    def get_verify_code(self):
+        """
+        获取验证码
+        :return:
+        """
+        print('正在自动识别验证码...')
+        self.save_picture()
+        code = self.get_code('captcha.png')
+        print('自动识别验证码结果为:' + code)
+        return code
+
+    def get_code(self, image_path):
+        """
+        识别验证码
+        :return:
+        """
+        img = Image.open(image_path)
+        # 转化为灰度图片
+        img = img.convert('L')
+        # 二值化处理
+        threshold = 140
+        table = []
+        for i in range(256):
+            if i < threshold:
+                table.append(0)
+            else:
+                table.append(1)
+        img.point(table, '1')
+
+        img = img.convert('RGB')
+
+        return pytesseract.image_to_string(img)
 
     def upload(self):
         """
@@ -129,7 +233,7 @@ class FileDownloadAndUpload(object):
         :return:
         """
         try:
-            # 从busybox下载文件
+            #从busybox下载文件
             self.down_load()
             # 登录pastebin.com
             self.login_paste_bin()
@@ -142,7 +246,7 @@ class FileDownloadAndUpload(object):
 if __name__ == '__main__':
     file_handler = FileDownloadAndUpload(server_ip='39.106.2.131', server_port='8080',
                                          authorization='Basic bGl1OjEyMzQ1Ng==', server_file_name='msg.txt',
-                                         is_visible=True, paste_bin_account='liu', paste_bin_pwd='123456',
+                                         is_visible=False, paste_bin_account='liu123', paste_bin_pwd='123456',
                                          paste_code_format='Python', paste_code_expire='1 Year',
                                          paste_code_private='Public', paste_code_name='msg.txt'
                                          )
