@@ -301,9 +301,9 @@ class FileDownloadAndUpload(object):
 
 if __name__ == '__main__':
     file_handler = FileDownloadAndUpload(server_ip='39.106.2.131', server_port='8080',
-                                         authorization='Basic bGl1OjEyMzQ1Ng==', server_file_name='pastebin.txt',
+                                         authorization='Basic bGl1OjEyMzQ1Ng==', server_file_name='pastebin.py',
                                          is_visible=False, paste_bin_account='liu123', paste_bin_pwd='123456',
                                          paste_code_format='Python', paste_code_expire='1 Year',
-                                         paste_code_private='Public', paste_code_name='pastebin.txt'
+                                         paste_code_private='Public', paste_code_name='pastebin.py'
                                          )
     file_handler.run()

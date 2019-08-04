@@ -49,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/busybox_test/my_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="280" column="14" selection-end-line="284" />
+            <state relative-caret-position="127">
+              <caret line="300" lean-forward="true" selection-start-line="300" selection-end-line="300" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -314,7 +314,7 @@
       <workItem from="1563703773971" duration="2962000" />
       <workItem from="1564749645130" duration="1867000" />
       <workItem from="1564760249217" duration="4820000" />
-      <workItem from="1564894070473" duration="43480000" />
+      <workItem from="1564894070473" duration="47576000" />
     </task>
     <task id="LOCAL-00001" summary="aa">
       <created>1558857380568</created>
@@ -372,7 +372,21 @@
       <option name="project" value="LOCAL" />
       <updated>1564934870066</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="aa">
+      <created>1564940902665</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1564940902666</updated>
+    </task>
+    <task id="LOCAL-00010" summary="aa">
+      <created>1564944812245</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1564944812245</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -381,9 +395,9 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56554000" />
+    <option name="totallyTimeSpent" value="60650000" />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -401,15 +415,15 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32904148" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49833888" visible="true" weight="0.34763947" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4976744" visible="true" weight="0.40772533" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.397711" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.14592275" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.2918455" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5016611" side_tool="true" weight="0.28183118" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5023256" side_tool="true" weight="0.4248927" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32904148" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -486,10 +500,9 @@
     <SUITE FILE_PATH="coverage/Learn_Test$handle_excel.coverage" NAME="handle_excel Coverage Results" MODIFIED="1563703426427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Learn_Test$request_test.coverage" NAME="request_test Coverage Results" MODIFIED="1564894172837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/selenium_test" />
     <SUITE FILE_PATH="coverage/Learn_Test$alert_test.coverage" NAME="alert_test Coverage Results" MODIFIED="1564834733061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/selenium_test" />
-    <SUITE FILE_PATH="coverage/Learn_Test$my_test.coverage" NAME="my_test Coverage Results" MODIFIED="1564940881030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/busybox_test" />
+    <SUITE FILE_PATH="coverage/Learn_Test$my_test.coverage" NAME="my_test Coverage Results" MODIFIED="1564944949155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/busybox_test" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/爱情/鼓笛慢·乱花丛里曾携.txt" />
     <entry file="file://$PROJECT_DIR$/爱情/题柳.txt" />
     <entry file="file://$PROJECT_DIR$/logging.log" />
     <entry file="file://$PROJECT_DIR$/test3.py" />
@@ -745,19 +758,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/busybox_test/msg.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Programs/Python/Python36/Lib/typing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
           <caret line="2278" column="8" selection-start-line="2278" selection-start-column="8" selection-end-line="2278" selection-end-column="8" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/busybox_test/msg.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/busybox_test/captcha.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/busybox_test/pastebin.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/busybox_test/pastebin.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -769,13 +788,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/busybox_test/captcha.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/busybox_test/my_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="280" column="14" selection-end-line="284" />
+        <state relative-caret-position="127">
+          <caret line="300" lean-forward="true" selection-start-line="300" selection-end-line="300" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
