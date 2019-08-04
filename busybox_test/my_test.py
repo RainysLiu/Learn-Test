@@ -79,6 +79,18 @@ class FileDownloadAndUpload(object):
         cur_path = os.path.dirname(__file__)
         print('下载文件%s至目录:%s成功!' % (self.server_file_name, cur_path))
 
+    def login_without_code(self):
+        """
+        没有验证码时的登录
+        :return:
+        """
+        account_input = self.browser.find_element_by_xpath('//*[@name="user_name"]')
+        account_input.send_keys(self.paste_bin_account)
+        pwd_input = self.browser.find_element_by_xpath('//*[@name="user_password"]')
+        pwd_input.send_keys(self.paste_bin_pwd)
+        submit = self.browser.find_element_by_xpath('//*[@name="submit"]')
+        submit.click()
+
     def login_paste_bin(self):
         """
         登录pastebin
@@ -86,27 +98,33 @@ class FileDownloadAndUpload(object):
         """
         print('正在登录pastebin.com...')
         self.browser.get('https://pastebin.com/login')
-        # time.sleep(10)
+        # todo:先检验是否需要输入验证码的场景
+
+        need_code_verfiy = False
+        if not need_code_verfiy:
+            self.login_without_code()
+            print('用户[%s]登录pastebin.com成功！' % self.paste_bin_account)
+            return True
         # 获取验证码并登录
-        verify_ok = self.login_with_code(mode='auto')
-        if not verify_ok:
+        verify_result = self.login_with_code(mode='auto')
+        if not verify_result:
             for i in range(5):
                 print('即将第%s次重新自动识别验证码...' % (i + 1))
                 # 非重新加载验证码的情况下，才需要输入账户密码
-                if verify_ok != 'reload code':
+                if not self.reload_code:
                     account_input = self.browser.find_element_by_xpath('//*[@name="user_name"]')
                     account_input.send_keys(self.paste_bin_account)
                     pwd_input = self.browser.find_element_by_xpath('//*[@name="user_password"]')
                     pwd_input.send_keys(self.paste_bin_pwd)
-                verify_ok = self.login_with_code(mode='auto')
-                if verify_ok:
+                verify_result = self.login_with_code(mode='auto')
+                if verify_result:
                     print('用户[%s]登录pastebin.com成功！' % self.paste_bin_account)
                     break
             else:
                 for i in range(5):
                     print('即将第%s次手动输入验证码...' % (i + 1))
-                    code_ok = self.login_with_code(mode='manual')
-                    if code_ok:
+                    verify_result = self.login_with_code(mode='manual')
+                    if verify_result:
                         print('用户[%s]登录pastebin.com成功！' % self.paste_bin_account)
                         break
                 else:
@@ -154,7 +172,7 @@ class FileDownloadAndUpload(object):
         im.save('captcha.png')
         im = Image.open('captcha.png')
         im = ImageEnhance.Color(im).enhance(3)
-        im = ImageEnhance.Contrast(im).enhance(3)
+        im = ImageEnhance.Contrast(im).enhance(5)
         im.save('captcha.png')
 
     def login_with_code(self, mode):
@@ -163,6 +181,7 @@ class FileDownloadAndUpload(object):
         :param mode: 自动识别还是手动输入验证码
         :return:
         """
+        self.reload_code = False
         if mode == 'auto':
             code = self.get_verify_code()
         else:
@@ -171,7 +190,8 @@ class FileDownloadAndUpload(object):
             if self.is_visible:
                 print('自动识别验证码失败!将重新加载验证码...')
                 self.browser.find_element_by_id('reload').click()
-                return 'get code is empty'
+                self.reload_code = True
+                return False
             else:
                 print('自动识别验证码失败!等待刷新页面...')
                 self.browser.get('https://pastebin.com/login')
@@ -241,9 +261,14 @@ class FileDownloadAndUpload(object):
         paste_name_input = self.browser.find_element_by_name('paste_name')
         paste_name_input.send_keys(self.paste_code_name)
         self.browser.find_element_by_name('submit').click()
+        # todo:上传成功与否的标准，还需确定
+
         print('上传文件%s至pastebin.com成功！' % self.paste_code_name)
         if self.is_visible:
             print('浏览器即将关闭!')
+            time.sleep(10)
+        print('即将关闭浏览器对象!')
+        time.sleep(5)
         self.browser.quit()
 
     def run(self):
@@ -263,7 +288,7 @@ class FileDownloadAndUpload(object):
 
     def test_run(self):
         """
-        测试方法，正常抛错
+        测试方法，直接抛错
         :return:
         """
         # 从busybox下载文件
@@ -276,9 +301,9 @@ class FileDownloadAndUpload(object):
 
 if __name__ == '__main__':
     file_handler = FileDownloadAndUpload(server_ip='39.106.2.131', server_port='8080',
-                                         authorization='Basic bGl1OjEyMzQ1Ng==', server_file_name='pastebin.py',
+                                         authorization='Basic bGl1OjEyMzQ1Ng==', server_file_name='pastebin.txt',
                                          is_visible=False, paste_bin_account='liu123', paste_bin_pwd='123456',
                                          paste_code_format='Python', paste_code_expire='1 Year',
-                                         paste_code_private='Public', paste_code_name='pastebin.py'
+                                         paste_code_private='Public', paste_code_name='pastebin.txt'
                                          )
     file_handler.run()
