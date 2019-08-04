@@ -118,7 +118,7 @@ class FileDownloadAndUpload(object):
         paste_name_input = self.browser.find_element_by_name('paste_name')
         paste_name_input.send_keys(self.paste_code_name)
         self.browser.find_element_by_name('submit').click()
-        print('文件上传至pastebin.coms成功！')
+        print('文件上传至pastebin.com成功！')
         if self.is_visible:
             print('浏览器即将关闭!')
         self.browser.quit()
