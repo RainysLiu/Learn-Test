@@ -91,6 +91,17 @@ class FileDownloadAndUpload(object):
         submit = self.browser.find_element_by_xpath('//*[@name="submit"]')
         submit.click()
 
+    def is_need_code_verify(self):
+        """
+        判断登录场景是否需要校验验证码的场景
+        :return:
+        """
+        result = self.browser.find_elements_by_id('captcha')
+        if len(result) == 0:
+            print('当前登录无需验证码！')
+            return False
+        return True
+
     def login_paste_bin(self):
         """
         登录pastebin
@@ -98,9 +109,7 @@ class FileDownloadAndUpload(object):
         """
         print('正在登录pastebin.com...')
         self.browser.get('https://pastebin.com/login')
-        # todo:先检验是否需要输入验证码的场景
-
-        need_code_verfiy = False
+        need_code_verfiy = self.is_need_code_verify()
         if not need_code_verfiy:
             self.login_without_code()
             print('用户[%s]登录pastebin.com成功！' % self.paste_bin_account)
