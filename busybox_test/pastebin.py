@@ -287,7 +287,7 @@ class FileDownloadAndUpload(object):
         """
         try:
             #从busybox下载文件
-            self.down_load()
+            # self.down_load()
             # 登录pastebin.com
             self.login_paste_bin()
             # 上传代码文件至pastebin.com
@@ -311,7 +311,7 @@ class FileDownloadAndUpload(object):
 if __name__ == '__main__':
     file_handler = FileDownloadAndUpload(server_ip='39.106.2.131', server_port='8080',
                                          authorization='Basic bGl1OjEyMzQ1Ng==', server_file_name='msg.txt',
-                                         is_visible=False, paste_bin_account='liu123', paste_bin_pwd='123456',
+                                         is_visible=True, paste_bin_account='liu123', paste_bin_pwd='123456',
                                          paste_code_format='Python', paste_code_expire='1 Year',
                                          paste_code_private='Public', paste_code_name='msg.txt'
                                          )

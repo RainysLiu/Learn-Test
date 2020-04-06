@@ -6,6 +6,7 @@ import time
 cur_path = os.path.dirname(__file__)
 file_list=os.listdir(cur_path)
 
+
 def getConfig(set_section=None, set_option=None):
     for file_name in file_list:
         if 'ini' in file_name:

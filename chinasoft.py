@@ -8,10 +8,10 @@ def check_work_list():
     # 创建一个会话,往下的所有get-post请求都要使用s进行发送
     s = requests.Session()
 
-    userid = input('输入你的工号:')
+    userid = '164012'
     # pwd= getpass.getpass("请输入你的密码:")
-    pwd = input('请输入你的密码:')
-    post_url = 'http://ics.chinasoftosg.com/login'
+    pwd = 'la1414785769'
+    post_url = 'http://ics.chinasoftinc.com/login'
     formdata = {
         'userid': userid,
         'linkpage': '',
@@ -21,15 +21,13 @@ def check_work_list():
         'j_password': pwd,
     }
 
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
-                      ' AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36',
-        'Referer': 'http://ics.chinasoftosg.com/SignOnServlet',
+    header = {
+         'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36'
     }
 
     # 登陆网站
-    r = s.post(post_url, data=formdata, headers=headers)
-    # print(r.status_code,type(r.status_code))
+    r = s.post(post_url, data=formdata, headers=header, verify=False )
+    # print(r.status_code, r.content)
     res_header = r.headers
     if '登录系统失败' in r.text or res_header.get('Set-Cookie') is None:
         print('账号或密码输入错误,登陆失败!')
@@ -51,23 +49,35 @@ def check_work_list():
     print('正在为您查询打卡记录中，请稍等...')
 
     #进入考勤页面
-    s.get(url='http://kq.chinasoftosg.com:8000/workAttendance/login',)
-    get_url = 'http://kq.chinasoftosg.com:8000/workAttendance/loginAction'
-    s.get(url=get_url, headers=headers)
+    # s.get(url='http://kq.chinasoftosg.com:8000/workAttendance/login',)
+    get_url = 'http://ics.chinasoftinc.com/workAttendance/loginAction'
+    # formdata = {
+    #     'linkpage':'',
+    #         'lobNumber': '0000'+ userid,
+    #         'userName': '刘昂'
+    # }
+    # res = s.post(url=get_url,data=formdata)
     # print(res.status_code)
-    # print(res.headers)
 
-    # s.get(url='http://ics.chinasoftosg.com:8000/popnotify/?appname=kq_pop')
+    s.get(url='http://ics.chinasoftinc.com/workAttendance/loginAction')
 
     # 查看个人打卡数据
-    post_url = 'http://kq.chinasoftosg.com:8000/workAttendance/importsExamineAction_getImportsExamine'
+    post_url = 'http://ics.chinasoftinc.com/workAttendance/importsExamineAction_getImportsExamine'
     formdata = {
         'importsExamineVo.page': '1',
         'importsExamineVo.pagesize': '25',
     }
-    r = s.post(post_url, data=formdata)
-    # print(r.status_code)
-    # print(r.text)
+    header.update(
+        {
+            'Referer': 'http://ics.chinasoftinc.com/workAttendance/importsExamineAction_tooImportsExaminePage',
+            'X-Requested-With': 'XMLHttpRequest',
+            # 'Host': 'ics.chinasoftinc.com',
+            'Origin': 'http://ics.chinasoftinc.com'
+        }
+    )
+    r = s.post(post_url, headers=header,data=formdata,verify=False)
+    print(r.status_code)
+    print(r.content.decode('utf8'))
 
     all_info = r.json()['Rows']
 
