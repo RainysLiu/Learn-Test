@@ -35,6 +35,6 @@ def print_content(msg):
 #     return response
 
 
-itchat.auto_login(hotReload=True)    # 通过微信扫描二维码登录itchat.run()
+itchat.auto_login()    # 通过微信扫描二维码登录itchat.run()
 
 itchat.run()

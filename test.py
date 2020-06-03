@@ -1,4 +1,7 @@
 # encoding=utf8
+import json
+
+import requests
 
 json_str = {
     'mm': {
@@ -29,7 +32,5 @@ class GetValue:
         self.__fun(json_str, keywords)
         return self.result
 
-
-print(GetValue.get_value_with_keywords(json_str, 'hh'))
 
 
