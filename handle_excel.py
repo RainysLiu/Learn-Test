@@ -18,7 +18,6 @@ for clu_num in range(len(header)):
 workbook.save(excel_name)
 
 
-
 # 打开已有表格，创建读对象
 rexcel = xlrd.open_workbook(excel_name)
 # 获取sheet1
