@@ -3,21 +3,61 @@
 # for line in sys.stdin:
 #     print(''.join(sorted(line.strip())))
 #     import smtplib
-import smtplib
-from email.mime.text import MIMEText
-SMTPServer=r'smtp.qq.com'
-Sender=r'1072799939@qq.com'
-PassWord=r'liuang19950827*/'
-message= r"优点：简单、易学、免费且开源、高层语言、可移植性强、具有解释性、面向对象语言、具有可扩展性、代码规范" \
-        "缺点：运行速度慢、国内市场小、中文资料少、构架选择较多应用场景：web开发、OS管理、服务器运维的自动化脚本、" \
-         "科学计算、桌面软件、网络服务器软件、游戏、产品早期原型和迭代"
-mesg=MIMEText(message)
-mesg['Subject']=r'关于学习python的知识要点'
-mesg['From']=Sender
-mailServer=smtplib.SMTP_SSL(SMTPServer,465)
-mailServer.login(Sender,PassWord)
-mailServer.sendmail(Sender,r'Rainys_Liu@163.com',mesg.as_string())
-mailServer.quit()
+import socket
+
+# ipaddr = socket.gethostbyname(socket.gethostname())
+# print(ipaddr)
 
 
+# 单例模式和初始化只执行一次
+class Music(object):
+    isinstance = None
 
+    def __new__(cls, *args, **kwargs):
+        if cls.isinstance is None:
+            cls.isinstance = super().__new__(cls)
+        return cls.isinstance
+
+    is_init = False
+
+    def __init__(self):
+        if not Music.is_init:
+            print('初始化')
+            Music.is_init = True
+        return
+
+
+# print(Music())
+# print(Music())
+
+
+# 装饰器，写法具有闭包的所有特点,以下功能以登录校验为例
+def decorator(need_decorated_fun):
+    def wrapper(request,*args, **kwargs):
+        if 'session_id' in request.keys():
+            need_decorated_fun(request,*args, **kwargs)
+        else:
+            print('session不存在，即将进入登录页面：')
+    return wrapper
+
+
+# 需要被装饰的函数
+def my_info(request):
+    print('已进入%s的个人中心页面' % request.get('username'))
+
+
+"""装饰器的调用原理如下,等同于给需要装饰的函数加“@装饰器名”"""
+# 1. 调用装饰器(闭包函数)，传入需要被装饰的函数名(对象)，返回装饰器的内部包装函数
+wrapper = decorator(my_info)
+# 2. 调用装饰器返回的内部包装函数，传入需要被装饰函数所需的参数，返回被装饰后执行结果
+wrapper({'session_id': '', 'username': 'liming'})
+
+
+# 常用的语法糖需要被装饰的函数进行包装，给需要装饰的函数加“@装饰器名”
+@decorator
+def my_order(request):
+    print('已进入%s的个人订单页面' % request.get('username'))
+
+
+# 直接调用要被装饰函数即可实现
+my_order({})
