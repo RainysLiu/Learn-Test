@@ -1,8 +1,10 @@
 # encoding=utf8
 import json
+import os
+import time
 
 import requests
-
+"""
 json_str = {
     'mm': {
         'hh': 'ff'
@@ -40,5 +42,30 @@ str2 = re.match( r'(.*)on(.*?) .*', str1, re.M|re.I)
 print(str2.group(1))
 
 
+
+"""
+
+"""
+def test_time(fun):
+    def test(*args, **kwargs):
+        print("即将测试函数%s运行时间" % fun)
+        start_time = time.time()
+        fun(*args, **kwargs)
+        print("程序%s运行了%s秒" % (fun, time.time() - start_time))
+    return test
+
+
+def fun(s):
+    for i in range(s):
+        time.sleep(1)
+        print('第%s此循环' % i)
+
+
+test_time(fun)(5)
+"""
+# path = os.path.dirname(__file__) + '/test.py'
+path = os.path.join(os.path.dirname(__file__), 'test.py')
+print(os.path.abspath(path))
+print(os.path.exists(path))
 
 
