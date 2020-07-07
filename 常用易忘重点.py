@@ -407,14 +407,6 @@ DTree().show()
 先下载一个linux上的文件到本地，修改文件的内容，然后在上传上去
 """
 
-"""
-3.写一个自动化操作的类
-实现的功能:
-1.登录指定的linux主机，开启/home/busybox/下的busybox服务(busybox已经安装)，本地测试busbox服务是否可用。
-2.通过requests库下载1中开启的busybox服务下的msg.txt文件到本地
-3.连接一个指定linux主机的mysql数据库，里面有一个叫busybox的库, 该库里面有个表叫msg_txt，
-  字段有id和context和time，把2中下载的文件的内容读取出来插入到该表，时间为当前时间。
-"""
 
 
 
