@@ -1,10 +1,7 @@
 # encoding=utf8
-import json
-import os
+import re
 import time
 
-import requests
-"""
 json_str = {
     'mm': {
         'hh': 'ff'
@@ -17,41 +14,37 @@ json_str = {
 class GetValue:
     # 将查询结果以列表展示(可能多个)
     result = []
+
     @classmethod
-    def __fun(self, json_str, keywords):
-        if isinstance(json_str, dict):
-            if keywords in json_str.keys():
-                 self.result.append(json_str[keywords])
+    def __fun(cls, json_s, keywords):
+        if isinstance(json_s, dict):
+            if keywords in json_s.keys():
+                cls.result.append(json_s[keywords])
             else:
-                 for _, value in json_str.items():
-                    self.__fun(value, keywords)
-        if isinstance(json_str, list):
-            for li in json_str:
-                self.__fun(li, keywords)
+                for _, value in json_s.items():
+                    cls.__fun(value, keywords)
+        if isinstance(json_s, list):
+            for li in json_s:
+                cls.__fun(li, keywords)
 
     @classmethod
-    def get_value_with_keywords(self, json_str, keywords):
-        self.__fun(json_str, keywords)
-        return self.result
+    def get_value_with_keywords(cls, my_json, keywords):
+        cls.__fun(my_json, keywords)
+        return cls.result
 
 
-print([1,2,3,4,5][:100])
-import re
+print([1, 2, 3, 4, 5][:100])
 str1 = "Python's features"
-str2 = re.match( r'(.*)on(.*?) .*', str1, re.M|re.I)
+str2 = re.match(r'(.*)on(.*?) .*', str1, re.M | re.I)
 print(str2.group(1))
 
 
-
-"""
-
-"""
-def test_time(fun):
+def test_time(f):
     def test(*args, **kwargs):
-        print("即将测试函数%s运行时间" % fun)
+        print("即将测试函数%s运行时间" % f)
         start_time = time.time()
         fun(*args, **kwargs)
-        print("程序%s运行了%s秒" % (fun, time.time() - start_time))
+        print("程序%s运行了%s秒" % (f, time.time() - start_time))
     return test
 
 
@@ -62,10 +55,3 @@ def fun(s):
 
 
 test_time(fun)(5)
-"""
-# path = os.path.dirname(__file__) + '/test.py'
-path = os.path.join(os.path.dirname(__file__), 'test.py')
-print(os.path.abspath(path))
-print(os.path.exists(path))
-
-
