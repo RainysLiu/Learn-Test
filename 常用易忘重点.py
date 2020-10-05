@@ -84,7 +84,6 @@ def getallfiles(file_path):
 # getallfiles('E:/Project/')
 
 
-
 # 4.随机数的应用
 
 # 生成一个每位随机含大小写字母、数字的指定长度的验证码
@@ -192,22 +191,22 @@ a.*?b匹配最短的，以a开始，以b结束的字符串。如果把它应用�
 
 import re
 def phone(phone_num):
-    if re.match(r'1[3,4,5,7,8]\d{9}', phone_num):
+    if re.match(r'1[3|4|5|7|8]\d{9}', phone_num):
         print("您输入的的手机号码为：", phone_num)
         #中国联通号码开头：
         # 130，131，132，155，156，185，186，145，176
-        if re.match(r'13[0, 1, 2]\d{8}', phone_num) or \
-            re.match(r"15[5,6]\d{8}", phone_num) or \
-            re.match(r"18[5,6]", phone_num) or \
+        if re.match(r'13[0|1|2]\d{8}', phone_num) or \
+            re.match(r"15[5|6]\d{8}", phone_num) or \
+            re.match(r"18[5|6]", phone_num) or \
             re.match(r"145\d{8}", phone_num) or \
             re.match(r"176\d{8}", phone_num):
             print("该号码属于：中国联通")
         # 中国移动134, 135 , 136, 137, 138, 139, 147, 150, 151,152,
         # 157, 158, 159, 178, 182, 183, 184, 187, 188
-        elif re.match(r"13[4|5|6, 7, 8, 9]\d{8}", phone_num) or \
+        elif re.match(r"13[4|5|6|7|8|9]\d{8}", phone_num) or \
                 re.match(r"147\d{8}|178\d{8}", phone_num) or \
-                re.match(r"15[0, 1, 2, 7, 8, 9]\d{8}", phone_num) or \
-                re.match(r"18[2, 3, 4, 7, 8]\d{8}", phone_num):
+                re.match(r"15[0|1|2|7|8|9]\d{8}", phone_num) or \
+                re.match(r"18[2|3|4|7|8]\d{8}", phone_num):
             print("该号码属于：中国移动")
         else:
             # 中国电信 133,153,189
@@ -217,7 +216,7 @@ def phone(phone_num):
 
 phone("15802917105")
 
-# 2.写一个正则，匹配指定的电子邮箱
+# 2.写一个正则，匹配指定的电子邮箱(有问题)
 
 def email_addr(addr_num):
     # 任意邮箱账号正确注册规则，数字或字母开头
@@ -304,8 +303,8 @@ p = Person("红红",8)
 p.girl()
 
 
-
 # 8.3.类的构造函数和析构函数，分别指什么？代码说明:
+
 """
 1.构造函数是指__init__(self),即创建对象时对对象赋属性的函数，构造一个对象必须的
 2.析构函数值程序执行完毕时，或者函数内部对象使用完毕时，自动给调用的一个释放对象的方法__del__(self)
@@ -315,19 +314,32 @@ p.girl()
 """
 1.重写_str__和__repr__后（__repr__只在__str__位被重写时生效），打印对象名时不再是内存地址，
 而是重写后的__str__或__repr__函数返回的东西
+如果要把一个类的实例变成 str，就需要实现特殊方法__str__()
+__repr__和__str__这两个方法都是用于显示的，__str__是面向用户的，而__repr__面向开发者
 """
 
 # 8.5.写出一种实现类的单例模式的原理?代码说明:
 """
 重写__new__方法，使其只调用一次基类的__new__（cls）方法实现多次实例化只在第一次创建实例，即可实现单例
 """
+class Single(object):
+    # 定义一个类属性做判断
+    __instance=None
+    def __new__(cls):
+        if cls.__instance == None:
+            #如果__instance为空证明是第一次创建实例
+            cls.__instance = object.__new__(cls)
+            return cls.__instance
+        else:
+            #返回上一个对象的引用
+            return cls.__instance
 
 # 8.6.创建对象时默认调用哪两个私有方法？哪个是类方法、哪个是对象方法？调用的先后顺序？代码说明:
 """
 __new__和__init__，先调用__new__(cls)实现实例的创建，在调用__init__(self)给实例添加实例属性
 """
 
-# 8.7.如何给类/对象动态添加属性和方法，怎么限制属性添加的范围?
+# 8.7.如何给类/对象动态添加属性和方法，怎么限制属性添加的范围
 """
 添加属性:类名/对象名.属性名 = 值
 添加方法:from types import MethodType，类名/对象名.方法名 = MethodType（函数名, 对象名/类名）
@@ -391,18 +403,10 @@ DTree().show()
 实现的功能：
 执行linux系统命令并返回执行后的输出结果
 下载linux的文件到本地
-上传一个本地的文件到linux
+上传一个本地的文件到linux系统
 先下载一个linux上的文件到本地，修改文件的内容，然后在上传上去
 """
 
-"""
-3.写一个自动化操作的类
-实现的功能:
-1.登录指定的linux主机，开启/home/busybox/下的busybox服务(busybox已经安装)，本地测试busbox服务是否可用。
-2.通过requests库下载1中开启的busybox服务下的msg.txt文件到本地
-3.连接一个指定linux主机的mysql数据库，里面有一个叫busybox的库, 该库里面有个表叫msg_txt，
-  字段有id和context和time，把2中下载的文件的内容读取出来插入到该表，时间为当前时间。
-"""
 
 
 
